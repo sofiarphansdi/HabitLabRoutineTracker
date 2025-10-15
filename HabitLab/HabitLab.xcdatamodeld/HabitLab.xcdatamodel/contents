@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
+    <entity name="HabitEntity" representedClassName="HabitEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="habitDescription" optional="YES" attributeType="String"/>
+        <attribute name="isGood" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="createdDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="color" attributeType="String" defaultValueString="blue"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <relationship name="records" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HabitRecordEntity" inverseName="habit" inverseEntity="HabitRecordEntity"/>
+    </entity>
+    <entity name="HabitRecordEntity" representedClassName="HabitRecordEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isCompleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="habit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HabitEntity" inverseName="records" inverseEntity="HabitEntity"/>
+    </entity>
+    <elements>
+        <element name="HabitEntity" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="HabitRecordEntity" positionX="-54" positionY="27" width="128" height="89"/>
+    </elements>
+</model>
