@@ -12,7 +12,6 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            /*
             CalendarView()
                 .environmentObject(habitViewModel)
                 .tabItem {
@@ -34,7 +33,6 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
-             */
         }
     }
 }
